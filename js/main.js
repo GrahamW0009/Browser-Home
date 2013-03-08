@@ -31,3 +31,10 @@ function update() {
   $('#week').html(weeks[week]);
   $('#month').html(months[month]);
 }
+
+function getURLParameter(name) {
+  return (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1];
+}
+
+if (getURLParameter('background') != null)
+  $('html').css('background-image', 'url('+getURLParameter('background')+')');
