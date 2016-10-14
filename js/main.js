@@ -68,10 +68,3 @@
     }
 
 })(this, this.document);
-
-
-
-
-
-
-
