@@ -1,16 +1,17 @@
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
- 
+
 html {
-  background: url("/img/Orange_Bokeh.png");
-  background-size: 100%;
   color: #fff;
   font-family: Helvetica;
   font-weight: 100;
 }
- 
+
 body {
+  background: url("/img/Orange_Bokeh.png");
+  background-size: 100%;
+
   font-size: 1em;
   line-height: 1.4;
 }
@@ -72,7 +73,7 @@ textarea {
   top: 20%;
   width: 450px;
 }
- 
+
 #date {
   height: 150px;
   position: absolute;
@@ -80,7 +81,7 @@ textarea {
   top: 60%;
   width: 500px;
 }
- 
+
 #day {
   font-size: 50px;
   line-height: 50px;
@@ -89,8 +90,8 @@ textarea {
   text-align: right;
   top: 15px;
 }
- 
-#week {
+
+#weekday {
   font-size: 70px;
   line-height: 70px;
   position: relative;
@@ -98,7 +99,7 @@ textarea {
   text-align: right;
   top: 20px;
 }
- 
+
 #month {
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
