@@ -2,24 +2,24 @@
     'use strict';
 
     var MONTHS = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY',
-                  'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+                    'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 
     var WEEKDAYS = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY',
                     'THURSDAY', 'FRIDAY', 'SATURDAY'];
 
     var DAYS = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN',
-              'EIGHT', 'NINE', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN',
-              'FOURTEEN', 'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN',
-              'NINETEEN', 'TWENTY', 'TWENTY-ONE', 'TWENTY-TWO', 'TWENTY-THREE',
-              'TWENTY-FOUR', 'TWENTY-FIVE', 'TWENTY-SIX', 'TWENTY-SEVEN',
-              'TWENTY-EIGHT', 'TWENTY-NINE' ,'THIRTY', 'THIRTY-ONE'];
+                'EIGHT', 'NINE', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN',
+                'FOURTEEN', 'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN',
+                'NINETEEN', 'TWENTY', 'TWENTY-ONE', 'TWENTY-TWO', 'TWENTY-THREE',
+                'TWENTY-FOUR', 'TWENTY-FIVE', 'TWENTY-SIX', 'TWENTY-SEVEN',
+                'TWENTY-EIGHT', 'TWENTY-NINE' ,'THIRTY', 'THIRTY-ONE'];
 
 
     var elements = {
-        time: document.getElementById('time'),
-        day: document.getElementById('day'),
+        time:    document.getElementById('time'),
+        day:     document.getElementById('day'),
         weekday: document.getElementById('weekday'),
-        month: document.getElementById('month'),
+        month:   document.getElementById('month'),
     };
 
 
