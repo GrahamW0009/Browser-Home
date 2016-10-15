@@ -6,12 +6,18 @@ html {
   color: #fff;
   font-family: 'Helvetica Neue', Helvetica;
   font-weight: 100;
+
+  height: 100%;
+  width: 100%;
 }
 
 body {
   background: url("/background.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 
+  height: 100%;
+  width: 100%;
   font-size: 12px;
   line-height: 1.2;
 }
