@@ -1,26 +1,26 @@
 ;(function(window, document, undefined) {
     'use strict';
 
-    var MONTHS = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY',
-                    'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+    var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                    'August', 'September', 'October', 'November', 'December'];
 
-    var WEEKDAYS = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY',
-                    'THURSDAY', 'FRIDAY', 'SATURDAY'];
-
-    var DAYS = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN',
-                'EIGHT', 'NINE', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN',
-                'FOURTEEN', 'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN',
-                'NINETEEN', 'TWENTY', 'TWENTY-ONE', 'TWENTY-TWO', 'TWENTY-THREE',
-                'TWENTY-FOUR', 'TWENTY-FIVE', 'TWENTY-SIX', 'TWENTY-SEVEN',
-                'TWENTY-EIGHT', 'TWENTY-NINE' ,'THIRTY', 'THIRTY-ONE'];
+    var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+                    'Thursday', 'Friday', 'Saturday'];
 
 
     var elements = {
         time:    document.getElementById('time'),
-        day:     document.getElementById('day'),
         weekday: document.getElementById('weekday'),
         month:   document.getElementById('month'),
+        day:     document.getElementById('day'),
+        suffix:  document.getElementById('suffix'),
     };
+
+    function getGetOrdinal(n) {
+        var s = ['th', 'st', 'nd', 'rd'],
+            v = n % 100;
+        return s[(v - 20) % 10] || s[v] || s[0];
+    }
 
 
     function update() {
@@ -46,11 +46,13 @@
 
         // Update elements
         elements.time.innerHTML = hours +':'+ minutes;
-        elements.day.innerHTML = DAYS[day];
         elements.weekday.innerHTML = WEEKDAYS[weekday];
         elements.month.innerHTML = MONTHS[month];
+        elements.day.innerHTML = day;
+        elements.suffix.innerHTML = getGetOrdinal(day);
     }
 
+    update();
     setInterval(update, 1000);
 
 
