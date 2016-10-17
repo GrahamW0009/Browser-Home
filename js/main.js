@@ -64,9 +64,61 @@
         return (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[null,null])[1];
     }
 
-    if (getURLParameter('background') !== null) {
-        var imgURL = getURLParameter('background');
-        document.body.style['background-image'] = 'url('+imgURL+')';
+    function file2base64(file, cb) {
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+
+        img.onload = function() {
+            // var ratio = 1000 / img.width;
+
+            // canvas.width = 1000;
+            // canvas.height = Math.floor(img.height * ratio);
+
+            canvas.width  = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img,
+                0, 0, img.width, img.height,
+                0,0, canvas.width, canvas.height);
+
+            var dataURL = canvas.toDataURL('image/jpg');
+
+            console.log('dataURL size:' + dataURL.length);
+
+            cb(null, dataURL);
+        };
+
+        img.src = URL.createObjectURL(file);
     }
+
+    var imgURL = '/background.jpg';
+    if (getURLParameter('background') !== null) {
+        imgURL = getURLParameter('background');
+    } else if (localStorage.background) {
+        imgURL = localStorage.background;
+    }
+
+    document.body.style['background-image'] = 'url('+imgURL+')';
+
+    var setBtn = document.getElementById('settingsBtn');
+    var settings = document.getElementById('settings');
+    var file = document.getElementById('file');
+
+    setBtn.addEventListener('click', function() {
+        if (settings.style.display === 'block') {
+            settings.style.display = 'none';
+        } else {
+            settings.style.display = 'block';
+        }
+    });
+
+    file.addEventListener('change', function(e) {
+        file2base64(file.files[0], function(error, data) {
+            // localStorage.background = data;
+
+            document.body.style['background-image'] = 'url('+data+')';
+        });
+    });
 
 })(this, this.document);
