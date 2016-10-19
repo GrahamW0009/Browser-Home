@@ -28,7 +28,7 @@
 
         var month = now.getMonth();
         var weekday = now.getDay();
-        var day = now.getDate() - 1;
+        var day = now.getDate();
 
         var hours = now.getHours();
         var minutes = now.getMinutes();
